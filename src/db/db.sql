@@ -46,3 +46,19 @@ INSERT INTO `pets` (pet_id, name, dob, client_email, isArchived) VALUES
 (4, 'Snoopy', '2015-12-12', 'snoopy@gmail.com', 0),
 (5, 'Lassie', '2019-08-13', 'lassie@gmail.com', 0);
 
+-- medications
+INSERT INTO `medications` (name, description) VALUES
+('Vitamin C', 'Vitamin C is an essential nutrient involved in the repair of tissue and the enzymatic production of certain neurotransmitters.'),
+('Vitamin D', 'Vitamin D is a group of fat-soluble secosteroids responsible for increasing intestinal absorption of calcium, magnesium, and phosphate, and multiple other biological effects.'),
+('Vitamin E', 'Vitamin E is a group of eight fat soluble compounds that include four tocopherols and four tocotrienols.'),
+('Vitamin K', 'Vitamin K is a group of structurally similar, fat-soluble vitamins that the human body requires for complete synthesis of certain proteins that are prerequisites for blood coagulation (K from Koagulation, German for "coagulation") and which the body also needs for controlling binding of calcium in bones and other tissues.'),
+("Xanax", "Helps you relax and be calm");
+
+-- logs
+INSERT INTO `logs` (pet_id, description, status) VALUES 
+(1, 'has high temperature', 'sick')
+(2, 'has a broken leg', 'sick'),
+(1, 'temparature normal', 'healthy'),
+(2, 'leg healed', 'healthy'),
+(4, 'bacteria found', 'sick'),
+(5, 'has a broken leg', 'sick');
