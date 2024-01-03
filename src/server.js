@@ -5,6 +5,7 @@ const cors = require('cors');
 // const testConnection = require('./routes/v1/testRoutes');
 const petsRouter = require('./routes/v1/petsRoutes');
 const medsRouter = require('./routes/v1/medsRoutes');
+const logsRouter = require('./routes/v1/logsRoutes');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 // Use routers
 app.use('/v1/api', petsRouter);
 app.use('/v1/api', medsRouter);
+app.use('/v1/api', logsRouter);
 
 // testConnection();
 // connect
