@@ -24,6 +24,8 @@ petsRouter.get('/pets', async (req, res) => {
 petsRouter.post('/pets', async (req, res) => {
   const { name, dob, clientEmail } = req.body;
   const argArr = [name, dob, clientEmail];
+
+  // TODO: validation joi
   const sql = `INSERT INTO ${tableName} (name, dob, client_email) VALUES (?,?,?)`;
 
   const [insertResultObj, error] = await dbQueryWithData(sql, argArr);
