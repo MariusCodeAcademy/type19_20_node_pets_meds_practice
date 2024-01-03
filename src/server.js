@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 // const testConnection = require('./routes/v1/testRoutes');
 const petsRouter = require('./routes/v1/petsRoutes');
+const medsRouter = require('./routes/v1/medsRoutes');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 
 // Use routers
 app.use('/v1/api', petsRouter);
+app.use('/v1/api', medsRouter);
 
 // testConnection();
 // connect

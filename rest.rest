@@ -16,3 +16,6 @@ Content-Type: application/json
   "dob": "2019-01-01",
   "clientEmail": "buddy@buddy.com"
 }
+
+### GET all meds
+GET http://localhost:3000/v1/api/meds
