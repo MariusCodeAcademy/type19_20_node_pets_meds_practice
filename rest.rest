@@ -3,4 +3,18 @@ GET http://localhost:3000
 ### GET all pets
 GET http://localhost:3000/v1/api/pets
 
-###
+### DELETE a pet
+DELETE http://localhost:3000/v1/api/pets/:id
+
+### POST create a pet
+## `pet_id`, `name`, `dob`, `client_email`, `isArchived`
+POST http://localhost:3000/v1/api/pets
+Content-Type: application/json
+
+{
+  "pet_id": "1",
+  "name": "Buddy",
+  "dob": "2019-01-01",
+  "client_email": "buddy@buddy.com",
+  "isArchived": false
+}
