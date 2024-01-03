@@ -39,7 +39,7 @@ CREATE TABLE `prescriptions` (
 
 -- 2. Užpildome lenteles pradiniais duomenimis (creative and funnes names):
 -- pets
-INSERT INTO `pets` (`pet_id`, `name`, `dob`, `client_email`, `isArchived`) VALUES
+INSERT INTO `pets` (pet_id, name, dob, client_email, isArchived) VALUES
 (1, 'Rex', '2018-01-01', 'rexowner@gmail.com', 0),
 (2, 'Garfield', '2016-05-01', 'garfieldwner@gmail.com', 0),
 (3, 'Scooby', '2017-04-20', 'Scooby@gmail.com', 0),
