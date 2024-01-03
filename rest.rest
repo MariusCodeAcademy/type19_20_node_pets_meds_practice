@@ -1,3 +1,6 @@
 GET http://localhost:3000
 
+### GET all pets
+GET http://localhost:3000/v1/api/pets
+
 ###

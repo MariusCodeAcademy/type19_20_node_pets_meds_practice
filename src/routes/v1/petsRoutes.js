@@ -1,7 +1,15 @@
-// susikurti routeri
+const express = require('express');
 
-// GET /v1/api/pets - graziva visus gyvunus
+const petsRouter = express.Router();
 
-// export
+// GET /v1/api/pets - grazina visus gyvunus
+petsRouter.get('/pets', async (req, res) => {
+  // parsiusti ir grazinti gyvunus is db
+  res.json('grazina visus gyvunus');
+});
 
-// importuot routeri i server.js
+// POST /v1/api/pets įrašo vieną augintinį į 'pets' db;
+
+// DELETE /v1/api/pets/3 pakoreguoja augintinį pagal ID, kuriam 'isArchived' tampa '1' (t.y. true).
+
+module.exports = petsRouter;
