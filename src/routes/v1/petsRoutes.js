@@ -8,7 +8,8 @@ const tableName = 'pets';
 // GET /v1/api/pets - grazina visus gyvunus
 petsRouter.get('/pets', async (req, res) => {
   // parsiusti ir grazinti gyvunus is db
-  const sql = `SELECT * FROM ${tableName} WHERE isArchived=0`;
+  // const sql = `SELECT * FROM ${tableName} WHERE isArchived=0`;
+  const sql = `SELECT pet_id,name,dob,client_email FROM ${tableName} WHERE isArchived = 0`;
   const [petsArr, error] = await dbQueryWithData(sql);
 
   if (error) {

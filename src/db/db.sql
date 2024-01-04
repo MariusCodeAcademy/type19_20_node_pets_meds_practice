@@ -62,3 +62,13 @@ INSERT INTO `logs` (pet_id, description, status) VALUES
 (2, 'leg healed', 'healthy'),
 (4, 'bacteria found', 'sick'),
 (5, 'has a broken leg', 'sick');
+
+
+-- get all prescription for single pet
+SELECT prescriptions.prescription_id, prescriptions.comment, prescriptions.timestamp, pets.name, medications.name
+FROM prescriptions
+JOIN pets
+ON pets.pet_id=prescriptions.pet_id
+JOIN medications
+ON medications.medication_id=prescriptions.medication_id
+WHERE pets.pet_id = 2
