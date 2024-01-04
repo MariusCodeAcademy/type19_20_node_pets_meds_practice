@@ -22,6 +22,8 @@ GET http://localhost:3000/v1/api/meds
 
 ### GET logs for pet 
 GET http://localhost:3000/v1/api/logs/petId/2
+
+
 ### GET prescriptions for pet 
 
 GET http://localhost:3000/v1/api/prescriptions/petId/2
