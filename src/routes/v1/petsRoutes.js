@@ -1,5 +1,7 @@
 const express = require('express');
+
 const { dbQueryWithData } = require('../../helper');
+const { checkPetBody } = require('../../middleware');
 
 const petsRouter = express.Router();
 
@@ -22,11 +24,12 @@ petsRouter.get('/pets', async (req, res) => {
 });
 
 // POST /v1/api/pets įrašo vieną augintinį į 'pets' db;
-petsRouter.post('/pets', async (req, res) => {
+petsRouter.post('/pets', checkPetBody, async (req, res) => {
   const { name, dob, clientEmail } = req.body;
   const argArr = [name, dob, clientEmail];
 
-  // TODO: validation joi
+  // DONE: validation joi
+
   const sql = `INSERT INTO ${tableName} (name, dob, client_email) VALUES (?,?,?)`;
 
   const [insertResultObj, error] = await dbQueryWithData(sql, argArr);

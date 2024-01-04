@@ -5,7 +5,8 @@ const { dbQueryWithData } = require('../../helper');
 const prescriptionsRouter = express.Router();
 // GET/POST - /v1/prescriptions/
 
-// GET paims vieno augintinio visus įrašus iš 'prescriptions' db ir apjungs juos su pets ir med lentelėmis.
+// GET paims vieno augintinio visus įrašus iš 'prescriptions'
+// db ir apjungs juos su pets ir med lentelėmis.
 prescriptionsRouter.get('/prescriptions/petId/:petId', async (req, res) => {
   const { petId } = req.params;
   const sql = `
