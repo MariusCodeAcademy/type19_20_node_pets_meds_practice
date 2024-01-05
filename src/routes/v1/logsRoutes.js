@@ -4,6 +4,7 @@
 
 const express = require('express');
 const { dbQueryWithData } = require('../../helper');
+const { checkLogsBody } = require('../../middleware');
 
 const logsRouter = express.Router();
 
@@ -30,7 +31,7 @@ logsRouter.get('/logs/petId/:petId', async (req, res) => {
 });
 
 // POST įrašys naują įrašą į 'logs' db.
-logsRouter.post('/logs/petId/:petId', async (req, res) => {
+logsRouter.post('/logs/petId/:petId', checkLogsBody, async (req, res) => {
   const { petId } = req.params;
   const { description, status } = req.body;
   const sql =
