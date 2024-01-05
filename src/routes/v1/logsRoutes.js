@@ -30,5 +30,28 @@ logsRouter.get('/logs/petId/:petId', async (req, res) => {
 });
 
 // POST įrašys naują įrašą į 'logs' db.
+logsRouter.post('/logs/petId/:petId', async (req, res) => {
+  const { petId } = req.params;
+  const { description, status } = req.body;
+  const sql =
+    'INSERT INTO `logs` (`pet_id`, `description`, `status`) VALUES (?,?,?)';
+
+  const [insertResultObj, error] = await dbQueryWithData(sql, [
+    petId,
+    description,
+    status,
+  ]);
+
+  if (error) {
+    console.log('error ===', error);
+    res.status(500).json('Server error');
+    return;
+  }
+  if (insertResultObj.affectedRows === 1) {
+    res.status(201).json('Success');
+    return;
+  }
+  res.status(400).json(insertResultObj);
+});
 
 module.exports = logsRouter;
