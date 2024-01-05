@@ -1,6 +1,11 @@
 const Joi = require('joi');
 
-function errorDetails(errorsArr) {}
+function formatErrorArr(errorsObj) {
+  return errorsObj.details.map((eObj) => ({
+    field: eObj.path[0],
+    error: eObj.message,
+  }));
+}
 
 async function checkPetBody(req, res, next) {
   // aprasom koks bus musu objektas
@@ -22,7 +27,7 @@ async function checkPetBody(req, res, next) {
     console.log('error checkPetBody ===', error);
     // parasyti funkcija errorDetails(error)
     // grazina masyva kuriame yra objektas { field: name, err: "required field"}
-    res.status(400).json(error);
+    res.status(400).json(formatErrorArr(error));
   }
 }
 
